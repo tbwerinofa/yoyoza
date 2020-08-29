@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yoyoza/Model/Milestone.dart';
 import 'package:yoyoza/Model/QuestionGroup.dart';
-import 'package:yoyoza/Model/RequestResidentialUnit.dart';
-import 'package:yoyoza/Model/Question.dart';
-import 'package:yoyoza/view/requestcontroller.dart';
-import 'package:yoyoza/service/requestresidentialunitservice.dart';
-import 'package:yoyoza/service/requestservice.dart';
-import 'package:yoyoza/view/milestonecontroller.dart';
-import '../Model/Request.dart';
-
-
 
 class QuestionController extends StatefulWidget {
   QuestionController({this.parentEntity});
@@ -92,20 +82,6 @@ class _QuestionControllerState extends State<QuestionController> {
     );
 
   }
-
-  void navigateToRequest() async{
-    await Navigator.push(context,
-      MaterialPageRoute(builder: (context) => RequestController()),
-    );
-  }
-
-  void navigateToMilestone(List<RequestResidentialUnit> entityList,RequestResidentialUnit entity) async{
-    print('navigate to milestone');
-    await Navigator.push(context,
-      MaterialPageRoute(builder: (context) => MilestoneController(parentEntity:entity)),
-    );
-  }
-
 
   Color _toggleColor(bool isCompliant){
     return Colors.white;

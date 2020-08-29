@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'assessmentgroupcontroller.dart';
 import 'questiongroupcontroller.dart';
-import 'package:yoyoza/view/requestcontroller.dart';
-
-import '../Model/Globals.dart';
 
 class LandingPage extends StatefulWidget {
   @override

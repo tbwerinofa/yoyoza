@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yoyoza/Model/Assessment.dart';
-import 'package:yoyoza/Model/RequestResidentialUnit.dart';
-import 'package:yoyoza/view/requestcontroller.dart';
-import 'package:yoyoza/service/locationbl.dart';
-import 'package:yoyoza/service/requestresidentialunitservice.dart';
-import 'imagecontroller.dart';
-import 'imageuicontroller.dart';
 
 class AnswerController extends StatefulWidget {
   AnswerController({this.parentEntity});

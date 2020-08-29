@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:yoyoza/Model/Assessment.dart';
 import 'package:yoyoza/Model/AssessmentGroup.dart';
-//import 'package:yoyoza/view/answercontroller.dart';
 import 'package:yoyoza/service/assessmentservice.dart';
-import '../Model/Request.dart';
 import 'answercontroller.dart';
 import 'assessmentgroupcontroller.dart';
 import 'logincontroller.dart';
-
-
 
 class AssessmentController extends StatefulWidget {
   AssessmentController({this.parentEntity});
@@ -16,8 +12,6 @@ class AssessmentController extends StatefulWidget {
   @override
   _AssessmentControllerState createState() => _AssessmentControllerState(parentEntity:this.parentEntity);
 }
-
-
 
 class _AssessmentControllerState extends State<AssessmentController> {
   _AssessmentControllerState({this.parentEntity});
