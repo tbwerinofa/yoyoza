@@ -7,6 +7,11 @@ class Globals {
   static String apiHost = '13.244.198.236';
   static String requestPath = '/api/request/';
   static String authorization = 'Bearer ' + Globals.token;
+
+static String questionPath = '/api/questiongroup/';
+  static String assessmentGroupPath = '/api/assessmentgroup/';
+  static String assessmentPath = '/api/assessment/';
+
 }
 
 class HttpUrl {

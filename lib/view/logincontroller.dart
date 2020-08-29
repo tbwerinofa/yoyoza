@@ -107,7 +107,9 @@ class _LoginPageAsyncState extends State<LoginPageAsync> {
 
   void signInResult(UserResponse entity)
   {
-
+     print('sign in result');
+     print(entity.description);
+     print(entity.error);
     widget._onSignIn();
     if(entity.isValid)
     {
@@ -116,7 +118,7 @@ class _LoginPageAsyncState extends State<LoginPageAsync> {
       _navNext(context);
       //showMessage("User is logged in ${entity.user.email}",Colors.blue);
     }else{
-      showMessage("Could not login ${entity.description}",Colors.red);
+      //showMessage("Could not login ${entity.description}",Colors.red);
     }
   }
 
@@ -125,7 +127,7 @@ class _LoginPageAsyncState extends State<LoginPageAsync> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HRTI SYSTEM',textAlign: TextAlign.center),
+        title: Text('Yoyoza !!',textAlign: TextAlign.center),
         backgroundColor: Colors.blue,
       ),
       // display modal progress HUD (heads-up display, or indicator)

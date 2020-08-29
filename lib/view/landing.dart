@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yoyoza/view/milstonetypecontroller.dart';
+import 'assessmentgroupcontroller.dart';
+import 'questiongroupcontroller.dart';
 import 'package:yoyoza/view/requestcontroller.dart';
 
 import '../Model/Globals.dart';
@@ -32,7 +33,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('HRTI System'),
+        title: new Text('Yoyoza!!'),
       ),
       /*
       body: new Center(
@@ -46,7 +47,7 @@ class _LandingPageState extends State<LandingPage> {
   void changeTheme() async {
     if (colorSwitched) {
       setState(() {
-        logoImage = 'assets/images/hrti_logo_reloaded.png';
+        logoImage = 'assets/images/yoyoza_logo.jpg';
         _backgroundColor = [
           Color.fromRGBO(252, 214, 0, 1),
           Color.fromRGBO(251, 207, 6, 1),
@@ -65,7 +66,7 @@ class _LandingPageState extends State<LandingPage> {
       });
     } else {
       setState(() {
-        logoImage = 'assets/images/hrti_logo_reloaded.png';
+        logoImage = 'assets/images/yoyoza_logo.jpg';
         _borderContainer = Colors.lightBlueAccent;
         _backgroundColor = [
           Color.fromRGBO(249, 249, 249, 1),
@@ -120,8 +121,8 @@ class _LandingPageState extends State<LandingPage> {
               Image.asset(
                 logoImage,
                 fit: BoxFit.contain,
-                height: 150.0,
-                width: 150.0,
+                height: 75.0,
+                width: 75.0,
               ),
               Column(
                 children: <Widget>[
@@ -168,7 +169,7 @@ class _LandingPageState extends State<LandingPage> {
                             child: ListView(
                               children: <Widget>[
                                 Text(
-                                  'Projects',
+                                  'COVID-19',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: _textColor,
@@ -176,7 +177,7 @@ class _LandingPageState extends State<LandingPage> {
                                       fontSize: 30),
                                 ),
                                 Text(
-                                  'Manage in real time',
+                                  'Health Screening',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: _iconColor, fontSize: 16),
@@ -199,9 +200,9 @@ class _LandingPageState extends State<LandingPage> {
                           children: [
                             TableRow(children: [
                               _actionList(
-                                  'assets/images/ic_transact.png', 'Milestone Rules',false),
+                                  'assets/images/ic_transact.png', 'Screening Rules',false),
                               _actionList(
-                                  'assets/images/ic_money.png', 'Requests',true),
+                                  'assets/images/ic_money.png', 'Surveys',true),
                             ]),
                           ],
                         ),
@@ -259,10 +260,10 @@ class _LandingPageState extends State<LandingPage> {
   {
     if(isRequest) {
       Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new RequestController()));
+          new MaterialPageRoute(builder: (context) => new AssessmentGroupController()));
     }else{
       Navigator.push(context,
-          new MaterialPageRoute(builder: (context) => new MilestoneTypeController()));
+          new MaterialPageRoute(builder: (context) => new QuestionGroupController()));
     }
   }
 }
