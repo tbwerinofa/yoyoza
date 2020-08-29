@@ -29,7 +29,7 @@ class _AssessmentControllerState extends State<AssessmentController> {
           title: new Text('Results'),
         ),
         body: GetEntityList(),
-     // bottomNavigationBar: _buildBottomNavigationBar(),
+      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 

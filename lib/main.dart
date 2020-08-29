@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yoyoza/view/introcontroller.dart';
 import 'package:yoyoza/view/logincontroller.dart';
 void main() {
   runApp(MyApp());
@@ -9,13 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPageAsync(
-        onSignIn: () => print('login successful!'),
-      ),
+      home: IntroController(),
       //home:MyLoginPage(title: 'Login Page'),
     );
   }

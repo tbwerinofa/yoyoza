@@ -119,7 +119,7 @@ class _AnswerControllerState extends State<AnswerController> {
   }
   */
   Widget _displayByStyle(bool isCompliant){
-    return isCompliant ?Icon(Icons.check_circle,):Icon(Icons.error_outline);
+    return isCompliant ?Icon(Icons.error_outline):Icon(Icons.check_circle);
   }
   void showMessage(String message,[MaterialColor color = Colors.red])
   {
