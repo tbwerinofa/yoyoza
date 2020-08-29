@@ -5,7 +5,7 @@ class Question {
   int ordinal;
   String message;
   String discriminator;
-
+  bool isSuccess;
 
   Question({
     this.id,
@@ -13,6 +13,8 @@ class Question {
     this.ordinal,
     this.message,
     this.discriminator,
+    this.isSuccess
+
   });
 
 
@@ -24,6 +26,7 @@ class Question {
       ordinal: json['Ordinal'],
       discriminator: json['Discriminator'],
       message: json['Message'],
+      isSuccess: json['IsSuccess'],
     );
   }
 
@@ -35,6 +38,7 @@ class Question {
     map["Ordinal"] = ordinal;
     map["Discriminator"] = discriminator;
     map["Message"] = message;
+    map["IsSuccess"] = isSuccess;
     return map;
   }
 }

@@ -9,7 +9,7 @@ class Assessment {
   String outComes;
   String lastUpdated;
   String riskColor;
-  //List<Question> milestoneRuleSet;
+  List<Question> resultSet;
 
 
   Assessment({
@@ -19,9 +19,8 @@ class Assessment {
     this.riskLevel,
     this.outComes,
     this.lastUpdated,
-    this.riskColor
-
-   // this.milestoneRuleSet
+    this.riskColor,
+    this.resultSet
   });
 
   factory Assessment.fromJson(Map<String, dynamic> json) {
@@ -34,7 +33,7 @@ class Assessment {
       lastUpdated: json['LastUpdated'],
       riskColor: json['RiskColor'],
 
-       // milestoneRuleSet: (json['MilestoneRuleSet'] as List).map((value) => new Question.fromJson(value)).toList()
+       resultSet: (json['Answers'] as List).map((value) => new Question.fromJson(value)).toList()
 
     );
 
@@ -55,7 +54,7 @@ class Assessment {
     map["OutComes"] = outComes;
     map["LastUpdated"] =lastUpdated;
     map["RiskColor"] =riskColor;
-   // map["MilestoneRuleSet"] =encondeToJson(milestoneRuleSet);
+    map["Answers"] =encondeToJson(resultSet);
 
 
     return map;

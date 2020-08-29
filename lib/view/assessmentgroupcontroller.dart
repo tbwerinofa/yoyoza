@@ -3,7 +3,6 @@ import 'package:yoyoza/view/assessmentcontroller.dart';
 import 'package:yoyoza/service/assessmentgroupservice.dart';
 import '../Model/Globals.dart';
 import '../Model/AssessmentGroup.dart';
-import '../Model/Assessment.dart';
 import 'logincontroller.dart';
 
 
@@ -102,9 +101,6 @@ class _AssessmentGroupControllerState extends State<AssessmentGroupController> {
                 title: Text(
                     entityList[index].organisation),
                 onTap: () {
-                  print('navigate');
-
-
                   navigateToRequest(entityList[index]);
                 },
               ),

@@ -107,9 +107,9 @@ class _LoginPageAsyncState extends State<LoginPageAsync> {
 
   void signInResult(UserResponse entity)
   {
-     print('sign in result');
-     print(entity.description);
+     print('sign in result -error');
      print(entity.error);
+     print(entity.description);
     widget._onSignIn();
     if(entity.isValid)
     {

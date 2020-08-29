@@ -42,6 +42,8 @@ Future<UserResponse> signIn(User entity) async {
         body: loginInfo
     );
 
+
+    print(response.statusCode);
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body);
       resp.isValid =true;
@@ -53,6 +55,7 @@ Future<UserResponse> signIn(User entity) async {
       //FullName
     }
     else {
+
       final json = jsonDecode(response.body);
       //this call will fail if the security stamp for user is null
 
@@ -63,6 +66,7 @@ Future<UserResponse> signIn(User entity) async {
     }
   }
   catch (e){
+    print('thrown exception');
     resp.isValid =false;
     resp.error = e.message;
   }

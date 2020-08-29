@@ -4,6 +4,7 @@ import 'package:yoyoza/Model/AssessmentGroup.dart';
 //import 'package:yoyoza/view/answercontroller.dart';
 import 'package:yoyoza/service/assessmentservice.dart';
 import '../Model/Request.dart';
+import 'answercontroller.dart';
 import 'assessmentgroupcontroller.dart';
 import 'logincontroller.dart';
 
@@ -34,7 +35,7 @@ class _AssessmentControllerState extends State<AssessmentController> {
           title: new Text('Results'),
         ),
         body: GetEntityList(),
-      bottomNavigationBar: _buildBottomNavigationBar(),
+     // bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
@@ -100,7 +101,7 @@ class _AssessmentControllerState extends State<AssessmentController> {
             child: ListTile(
               title: ListTile(
                 leading: _displayByStyle(entityList[index].riskColor),
-                trailing: Icon(Icons.arrow_forward_ios),
+               trailing: Icon(Icons.arrow_forward_ios),
                 title: Text(
                     'Name: ${entityList[index].fullName}'),
 
@@ -109,7 +110,7 @@ class _AssessmentControllerState extends State<AssessmentController> {
                 },
 
               ),
-              subtitle: InspectionSubtitle(entityList[index].riskLevel),
+              subtitle: InspectionSubtitle(entityList[index].riskLevel,entityList[index].outComes),
             ),
           );
         },
@@ -125,24 +126,24 @@ class _AssessmentControllerState extends State<AssessmentController> {
         textColor: Colors.white,
         child: Text('Finalise'),
         onPressed: (){
-
+          Navigator.pop(context,true);
         },
       ),
 
     );
   }
 
-  Text InspectionSubtitle(String riskLevel)
+  Text InspectionSubtitle(String riskLevel,String outcomes)
   {
     return riskLevel == "Low" ? Text(
 
-        riskLevel,
+        riskLevel + ':' + outcomes,
         style: TextStyle(
             fontStyle: FontStyle.italic,
             color: Colors.green))
         :
     Text(
-      riskLevel,
+      riskLevel + ':' + outcomes,
       style: TextStyle(
           fontStyle: FontStyle.italic),
     );
